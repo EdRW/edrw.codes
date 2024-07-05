@@ -1,0 +1,15 @@
+{#- Add the contents of a file to the bundle #}
+
+{# Custom CSS #}
+{%- css %}{% include "public/css/index.css" %}{% endcss %}
+
+{# Pico CSS #}
+{%- css %}{% include "node_modules/@picocss/pico/css/pico.fuchsia.min.css" %}{% endcss %}
+
+{# Font Awesome #}
+{%- css %}{% include "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css" %}{% endcss %}
+{%- css %}{% include "node_modules/@fortawesome/fontawesome-free/css/solid.min.css" %}{% endcss %}
+{%- css %}{% include "node_modules/@fortawesome/fontawesome-free/css/brands.min.css" %}{% endcss %}
+
+{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
+<style>{% getBundle "css" %}</style>

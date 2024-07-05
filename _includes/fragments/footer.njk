@@ -1,0 +1,50 @@
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div>
+        <div>Credits</div>
+        <p>
+          Built with
+          <a href="https://www.11ty.dev/">Eleventy</a> and
+          <a href="https://picocss.com">pico css</a>.
+        </p>
+      </div>
+      <div class="text-center">
+        <div>rss</div>
+        <a href="{{ metadata.rssFeed }}" aria-label="RSS Feed" title="RSS Feed">
+          <i class="social-icon">{% include "public/svg/rss.svg" %}</i>
+        </a>
+      </div>
+      <div class="text-center">
+        <div>Around the web</div>
+        <div class="grid">
+          {%- for link in metadata.author.links %}
+            <div>
+              <a
+                href="{{ link.url }}"
+                aria-label="{{ link.name }}"
+                title="{{ link.name }}"
+              >
+                {% if  link.icon %}
+                  <i class="{{ link.icon }}"></i>
+                {% else %}
+                  <i class="social-icon"
+                    >{% include "public/svg/" + link.name +".svg" %}</i
+                  >
+                {% endif %}
+              </a>
+            </div>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <small>
+        Copyright &copy; 2014 -
+        {{ metadata.publishDate | readableDate('yyyy') }}
+        {{ metadata.author.name }}.
+        All rights reserved.
+      </small>
+    </div>
+  </div>
+</footer>

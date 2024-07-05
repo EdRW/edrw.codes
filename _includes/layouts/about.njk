@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>About Me</h1>
+<div class="grid">
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                              Left Sidebar                               -->
+  <!-- ----------------------------------------------------------------------- -->
+
+  <div>
+    <div class="grid">
+      <article>
+        <img src="{{ profilePic }}" alt="Profile picture of EdRW" />
+      </article>
+      <div>
+        <img
+          src="./google-cloud-pmle-badge.png"
+          alt="Google Cloud Certified Professional Machine Learning Engineer"
+        />
+      </div>
+    </div>
+
+    {{ content | safe }}
+  </div>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                              Right Sidebar                              -->
+  <!-- ----------------------------------------------------------------------- -->
+  <aside>
+    <h2>Skills</h2>
+
+    <h3>Programming Languages</h3>
+
+    <ul>
+      {% for lang in languages %}
+        <li>
+          <h4>{{ lang.name | safe }}</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td>Experience</td>
+                <td>
+                  {% for i in range(lang.ratings.experience) %}
+                    ⭐
+                  {% endfor %}
+                  {% for i in range(5 - lang.ratings.experience) %}
+                    ⚝
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td>Excitement</td>
+                <td>
+                  {% for i in range(lang.ratings.excitement) %}
+                    🩷
+                  {% endfor %}
+                  {% for i in range(5 - lang.ratings.excitement) %}
+                    🩶
+                  {% endfor %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p>
+      I also dabbled in
+      {% for lang in otherLanguages %}
+        {{ lang | safe }},
+      {% endfor %}
+      and more.
+    </p>
+  </aside>
+</div>

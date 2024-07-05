@@ -1,0 +1,55 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+numberOfLatestPostsToShow: 3
+---
+
+<h1>Hi there! 😸</h1>
+<p>
+  Welcome to EdRW.codes! I'm Ed, a software engineer based in Tokyo. This is
+  where I share my thoughts on everything from cloud-native architectures to
+  daily life in Japan 🌸.
+</p>
+
+<p>
+  I like music 🎧 , board games 🎲 , Japanese 🍙 , hard sci-fi books 📚 ,
+  compiled languages with static type checking 💪 , and ML training pipeline
+  orchestration 🤖 .
+</p>
+
+<p>If any of that sounds interesting to you, then you're in the right place!</p>
+
+<hr />
+
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h2>
+  Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
+</h2>
+
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "fragments/post-list.njk" %}
+
+{# more posts #}
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+{% if morePosts > 0 %}
+  <p>
+    check out
+    <a href="/blog/"
+      >{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} </a
+    >.
+  </p>
+{% endif %}
+
+{# List every content page in the project #}
+{# <h2>All Content</h2>
+<ul>
+  {%- for entry in collections.all %}
+    <li>
+      <a href="{{ entry.url }}"><code>{{ entry.url }}</code></a>
+    </li>
+  {%- endfor %}
+</ul> #}

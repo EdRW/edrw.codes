@@ -1,0 +1,8 @@
+.cache
+.pnpm-debug.log*
+.trash
+
+node_modules/
+
+_site/
+dist

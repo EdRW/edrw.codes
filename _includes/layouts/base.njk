@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{{ title or metadata.title }}</title>
+    <meta
+      name="description"
+      content="{{ description or metadata.description }}"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    {% include "fragments/css-bundle.njk" %}
+  </head>
+  <body>
+    <a href="#skip" class="visually-hidden">Skip to main content</a>
+
+    <header>
+      <div class="container">
+        <nav>
+          <h2 class="visually-hidden">Top level navigation menu</h2>
+          <ul>
+            <li>
+              <strong
+                ><a href="/" aria-label="EdRW.codes Homepage"
+                  >{{ metadata.title }}</a
+                ></strong
+              >
+            </li>
+          </ul>
+
+          {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+        </nav>
+      </div>
+    </header>
+    <main id="skip" class="container">{{ content | safe }}</main>
+
+    {% include "fragments/footer.njk" %}
+  </body>
+</html>
