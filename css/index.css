@@ -33,3 +33,13 @@
 .social-icon svg {
   height: 1em; /* Sets height relative to parent font size */
 }
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1em;
+}
+
+.pt-1 {
+  padding-top: 1em;
+}
