@@ -28,6 +28,11 @@ export default {
         url: "https://exercism.org/profiles/EdRW",
         icon: "",
       },
+      // {
+      //   name: "rss",
+      //   url: "",
+      //   icon: "",
+      // },
     ],
   },
   publishDate: new Date(),
