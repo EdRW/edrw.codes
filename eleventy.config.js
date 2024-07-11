@@ -68,7 +68,7 @@ export default function (eleventyConfig) {
   });
 
   // Return all the tags used in a collection
-  eleventyConfig.addFilter("getAllTags", (collection) => {
+  eleventyConfig.addFilter("getAllTags", (/** @type {any[]}*/ collection) => {
     let tagSet = new Set();
     for (let item of collection) {
       (item.data.tags || []).forEach((tag) => tagSet.add(tag));
@@ -76,11 +76,14 @@ export default function (eleventyConfig) {
     return Array.from(tagSet);
   });
 
-  eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-    return (tags || []).filter(
-      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
-    );
-  });
+  eleventyConfig.addFilter(
+    "filterTagList",
+    function filterTagList(/** @type {string[]}*/ tags) {
+      return (tags || []).filter(
+        (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
+      );
+    },
+  );
 
   return {
     // Pre-process *.md files with: (default: `liquid`)
