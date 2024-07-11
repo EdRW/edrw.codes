@@ -63,3 +63,13 @@
     display: none;
   }
 }
+
+.project-image {
+  max-height: 300px;
+  width: auto;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+}
