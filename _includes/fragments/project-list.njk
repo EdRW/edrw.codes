@@ -1,0 +1,42 @@
+{%- css %}
+  .postlist { counter-reset: start-from
+  {{ (postslistCounter or projectsList.length) + 1 }} }
+{% endcss %}
+<ol reversed class="postlist">
+  {% for projectRow in projectsList | batch(2) %}
+    <div class="grid">
+      {% for project in projectRow %}
+        <article>
+          <header class="text-center">
+            <h2>
+              <a href="{{ project.url }}" class="postlist-link"
+                >{% if project.name %}
+                  {{ project.name }}
+                {% else %}
+                  <code>{{ project.url }}</code>
+                {% endif %}</a
+              >
+            </h2>
+            <img
+              src="/../public/{{ project.image }}"
+              alt="{{ project.name }}"
+              class="project-image"
+            />
+          </header>
+          <p>{{ project.description | safe }}</p>
+          <footer class="project-footer">
+            <span>Tags: {{ project.tags | join(", ") }} </span>
+            <time
+              class="project-date"
+              datetime="{{ project.date | htmlDateString }}"
+              >{{ project.date | readableDate("LLLL yyyy") }}</time
+            >
+          </footer>
+        </article>
+        {% if loop.length === 1 %}
+          <div></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</ol>
