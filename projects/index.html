@@ -18,7 +18,7 @@
 
 
 <style>.postlist { counter-reset: start-from
-  5 }
+  6 }
 /*
  * https://webaim.org/techniques/css/invisiblecontent/
  * https://www.a11yproject.com/posts/how-to-hide-content/
@@ -94,6 +94,19 @@
   display: flex;
   justify-content: space-between;
 }
+.project-youtube {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.project-youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 @charset "UTF-8";/*!
  * Pico CSS ✨ v2.0.6 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
@@ -155,19 +168,44 @@
         <article>
           <header class="text-center">
             <h2>
+              <a href="https://www.lm3technologies.com/paqi" class="postlist-link">
+                  PAQi&#39;s Vision Inference Server
+                </a>
+            </h2>
+            
+              <picture><source type="image/webp" srcset="/projects/XhCKjXDB9n-835.webp 835w"><img src="/projects/XhCKjXDB9n-835.jpeg" alt="PAQi&#39;s Vision Inference Server" class="project-image" width="835" height="469"></picture>
+              
+          </header>
+          <p>The v1 of the object detection inference server and API embedded in the       <a href="https://www.lm3technologies.com/paqi">PAQi visual inspection system</a>.       The server is built to host trained ML models       and provide real-time inference results to the PAQi client applications.</p>
+          <footer class="project-footer">
+            <span>Tags: Professional, Python, Tensorflow, Flask </span>
+            <time class="project-date" datetime="2019-07-01">July 2019</time>
+          </footer>
+        </article>
+        
+      
+        <article>
+          <header class="text-center">
+            <h2>
               <a href="https://github.com/EdRW/Space_Invaders" class="postlist-link">
                   Space Invaders
                 </a>
             </h2>
-            <picture><source type="image/webp" srcset="/img/MAMlJ8aK6W-1000.webp 1000w"><img src="/img/MAMlJ8aK6W-1000.jpeg" alt="Space Invaders" class="project-image" width="1000" height="1000"></picture>
+            
+              <div class="project-youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/aHLuHxvRui0?si=zODGC2eNeJ19u1yV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+            
           </header>
-          <p>A C# implementation of the classic arcade game Space Invader,       using real-time architectures and OO-design patterns.</p>
+          <p>A C# implementation of the classic arcade game Space Invader,       using real-time architectural patterns and OO-design patterns.</p>
           <footer class="project-footer">
-            <span>Tags: Academic, Real-Time Architecture, C# </span>
+            <span>Tags: Academic, C#, Real-Time Architecture </span>
             <time class="project-date" datetime="2018-03-01">March 2018</time>
           </footer>
         </article>
         
+      
+    </div>
+  
+    <div class="grid">
       
         <article>
           <header class="text-center">
@@ -176,12 +214,33 @@
                   SEDA Task Scheduler
                 </a>
             </h2>
-            <picture><source type="image/webp" srcset="/img/MAMlJ8aK6W-1000.webp 1000w"><img src="/img/MAMlJ8aK6W-1000.jpeg" alt="SEDA Task Scheduler" class="project-image" width="1000" height="1000"></picture>
+            
+              <picture><source type="image/webp" srcset="/projects/M0QtwegrL8-900.webp 900w"><img src="/projects/M0QtwegrL8-900.jpeg" alt="SEDA Task Scheduler" class="project-image" width="900" height="650"></picture>
+              
           </header>
           <p>An scalable and elastic task scheduler for event driven applications.       This implementation, based on        <a href="https://www.sosp.org/2001/papers/welsh.pdf">Staged Event-Driven Architecture (SEDA)</a>,        allows for single tasks to be broken up        into smaller independent tasks that may execute concurrently        while employing runtime tuning of event queue parameters to manage load.</p>
           <footer class="project-footer">
-            <span>Tags: Academic, SEDA, Java </span>
+            <span>Tags: Academic, Java, SEDA </span>
             <time class="project-date" datetime="2017-10-01">October 2017</time>
+          </footer>
+        </article>
+        
+      
+        <article>
+          <header class="text-center">
+            <h2>
+              <a href="https://www.lm3technologies.com/" class="postlist-link">
+                  Test Sequencer
+                </a>
+            </h2>
+            
+              <picture><source type="image/webp" srcset="/projects/oGjNyMTLQC-642.webp 642w"><img src="/projects/oGjNyMTLQC-642.jpeg" alt="Test Sequencer" class="project-image" width="642" height="360"></picture>
+              
+          </header>
+          <p>The runtime engine at the heart of LM3 Function Testers.       It executes automated tests of the electromechanical and safety       functions of automotive components for end-of-line quality control.</p>
+          <footer class="project-footer">
+            <span>Tags: Professional, LabVIEW, Industrial Automation </span>
+            <time class="project-date" datetime="2014-06-01">June 2014</time>
           </footer>
         </article>
         
@@ -194,34 +253,21 @@
           <header class="text-center">
             <h2>
               <a href="https://www.lm3technologies.com/" class="postlist-link">
-                  Test Sequencer
+                  Test Sequence Editor
                 </a>
             </h2>
-            <picture><source type="image/webp" srcset="/img/MAMlJ8aK6W-1000.webp 1000w"><img src="/img/MAMlJ8aK6W-1000.jpeg" alt="Test Sequencer" class="project-image" width="1000" height="1000"></picture>
+            
+              <picture><source type="image/webp" srcset="/projects/vHhKHZVf_2-600.webp 600w"><img src="/projects/vHhKHZVf_2-600.jpeg" alt="Test Sequence Editor" class="project-image" width="600" height="372"></picture>
+              
           </header>
-          <p>A test sequencer for testing hardware.</p>
+          <p>An editor for writing function test sequences using a simple but powerful graphical DSL.       Sequences are compiled into a binary format that is executed by the Test Sequencer runtime.       The editor is part of the LM3 Function Tester software suite.</p>
           <footer class="project-footer">
-            <span>Tags: Professional, LabVIEW, Test Automation </span>
+            <span>Tags: Professional, LabVIEW, Industrial Automation </span>
             <time class="project-date" datetime="2014-06-01">June 2014</time>
           </footer>
         </article>
         
-      
-        <article>
-          <header class="text-center">
-            <h2>
-              <a href="https://www.lm3technologies.com/" class="postlist-link">
-                  Test Sequencer Editor
-                </a>
-            </h2>
-            <picture><source type="image/webp" srcset="/img/MAMlJ8aK6W-1000.webp 1000w"><img src="/img/MAMlJ8aK6W-1000.jpeg" alt="Test Sequencer Editor" class="project-image" width="1000" height="1000"></picture>
-          </header>
-          <p>A test sequencer for testing hardware.</p>
-          <footer class="project-footer">
-            <span>Tags: Professional, LabVIEW, Test Automation </span>
-            <time class="project-date" datetime="2014-06-01">June 2014</time>
-          </footer>
-        </article>
+          <div></div>
         
       
     </div>
