@@ -1,13 +1,18 @@
 /**
  * @typedef {["Professional"|"Academic"|"Personal", ...string[]]} Tags
  *
- * @typedef {Object} Project
+ *
+ * @typedef {Object} ProjectBase
  * @property {string} name
  * @property {Date} date
  * @property {string} url
  * @property {string} description
  * @property {Tags} tags
- * @property {string} image
+ * @property {string} [image]
+ * @property {string} [header]
+ *
+ *
+ * @typedef {ProjectBase} Project
  */
 
 /** @type {Project[]} */
@@ -17,11 +22,11 @@ const projects = [
     date: new Date("2018-03"),
     description:
       "A C# implementation of the classic arcade game Space Invader, \
-      using real-time architectures and OO-design patterns.",
+      using real-time architectural patterns and OO-design patterns.",
     /**@type {Tags} */
     tags: ["Academic", "Real-Time Architecture", "C#"],
-    image: "svg/programming.svg",
     url: "https://github.com/EdRW/Space_Invaders",
+    header: `<iframe width="560" height="315" src="https://www.youtube.com/embed/aHLuHxvRui0?si=zODGC2eNeJ19u1yV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     name: "SEDA Task Scheduler",
@@ -36,7 +41,7 @@ const projects = [
     type: "Academic",
     /**@type {Tags} */
     tags: ["Academic", "SEDA", "Java"],
-    image: "svg/programming.svg",
+    image: "./img/SEDA.png",
     url: "https://github.com/EdRW/SEDA_Implementation",
   },
   {
@@ -45,8 +50,8 @@ const projects = [
     description: "A test sequencer for testing hardware.",
     /**@type {Tags} */
     tags: ["Professional", "LabVIEW", "Test Automation"],
-    image: "svg/programming.svg",
     url: "https://www.lm3technologies.com/",
+    image: "./img/sequencer.jpg",
   },
   {
     name: "Test Sequencer Editor",
@@ -54,8 +59,8 @@ const projects = [
     description: "A test sequencer for testing hardware.",
     /**@type {Tags} */
     tags: ["Professional", "LabVIEW", "Test Automation"],
-    image: "svg/programming.svg",
     url: "https://www.lm3technologies.com/",
+    image: "./img/sequence_editor.jpg",
   },
 ].sort((a, b) => b.date.getTime() - a.date.getTime());
 

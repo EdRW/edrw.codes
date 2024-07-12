@@ -17,11 +17,21 @@
                 {% endif %}</a
               >
             </h2>
-            <img
-              src="/../public/{{ project.image }}"
-              alt="{{ project.name }}"
-              class="project-image"
-            />
+            {% if project.image %}
+              <img
+                src="{{ project.image }}"
+                alt="{{ project.name }}"
+                class="project-image"
+              />
+              {% elseif project.header %}
+              <div class="project-youtube">{{ project.header | safe }}</div>
+            {% else %}
+              <img
+                src="/../public/svg/programming.svg"
+                alt="{{ project.name }}"
+                class="project-image"
+              />
+            {% endif %}
           </header>
           <p>{{ project.description | safe }}</p>
           <footer class="project-footer">
